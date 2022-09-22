@@ -41,7 +41,7 @@ Only the `std` feature is enabled by default.
 ## Motivation
 
 There are other packages that solve this solution. When searching for my own,
-I came across two other packages:
+I primarily came across two other packages:
 
 * [`nonempty`] which only supported vectors and didn't have a sollution to
   working elegantly with iterators. Also, interoperability between its exported
