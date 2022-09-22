@@ -23,6 +23,7 @@ mod vec;
 
 #[cfg(any(feature = "alloc", feature = "std"))]
 pub use iter::IteratorExt;
+#[doc(inline)]
 pub use slice::NonEmptySlice;
 #[cfg(any(feature = "alloc", feature = "std"))]
 pub use vec::NonEmptyVec;
