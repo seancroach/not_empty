@@ -1,3 +1,5 @@
+//! Slices and vectors that are statically guaranteed to be not empty.
+
 #![cfg_attr(not(feature = "std"), no_std)]
 
 // not_empty types in rustdoc of other crates get linked to here
@@ -5,6 +7,7 @@
 
 #![cfg_attr(doc_cfg, feature(doc_cfg))]
 
+#![deny(missing_docs)]
 #![deny(clippy::pedantic)]
 #![allow(clippy::module_name_repetitions, clippy::wildcard_imports)]
 

@@ -924,6 +924,9 @@ impl<T> NonEmptyVec<T> {
     /// If the returned iterator goes out of scope without being dropped (due to
     /// [`mem::forget`], for example), the vector may have lost and leaked
     /// elements arbitrarily, including elements outside the range.
+    ///
+    ///
+    /// [`mem::forget`]: core::mem::forget
     #[inline]
     #[track_caller]
     pub unsafe fn drain<R>(&mut self, range: R) -> vec::Drain<'_, T>

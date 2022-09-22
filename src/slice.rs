@@ -1,3 +1,8 @@
+//! A dynamically-sized view into a contiguous sequence, `[T]`, that is not
+//! empty.
+//!
+//! See also the [`NonEmptySlice<T>`] type.
+
 #[cfg(any(feature = "alloc", feature = "std"))]
 use crate::NonEmptyVec;
 use crate::{imports::*, EmptyError};
