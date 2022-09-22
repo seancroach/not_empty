@@ -1,0 +1,15 @@
+[package]
+name = "not_empty"
+version = "0.1.0"
+
+edition = "2021"
+
+[features]
+default = ["std"]
+
+alloc = ["serde?/alloc"]
+serde = ["dep:serde"]
+std = ["serde?/std"]
+
+[dependencies]
+serde = { version = "1", optional = true, default-features = false }
