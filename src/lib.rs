@@ -14,7 +14,8 @@
 #[cfg(all(feature = "alloc", feature = "std"))]
 compile_error!("`not_empty` cannot have both `alloc` and `std` features enabled");
 
-mod imports;
+#[cfg(any(feature = "alloc", feature = "std"))]
+mod alloc;
 #[cfg(any(feature = "alloc", feature = "std"))]
 mod iter;
 pub mod slice;

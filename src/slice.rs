@@ -3,9 +3,9 @@
 //!
 //! See also the [`NonEmptySlice<T>`] type.
 
+use crate::EmptyError;
 #[cfg(any(feature = "alloc", feature = "std"))]
-use crate::NonEmptyVec;
-use crate::{imports::*, EmptyError};
+use crate::{alloc::*, NonEmptyVec};
 
 use core::{
     array::TryFromSliceError,

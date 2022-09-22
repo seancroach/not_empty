@@ -1,11 +1,13 @@
-use crate::{imports::*, EmptyError, NonEmptySlice};
+use crate::{alloc::*, EmptyError, NonEmptySlice};
 
+#[cfg(feature = "std")]
+use core::num::NonZeroU8;
 use core::{
     cmp::Ordering,
     fmt,
     hash::{Hash, Hasher},
     mem::MaybeUninit,
-    num::{NonZeroU8, NonZeroUsize},
+    num::NonZeroUsize,
     ops, ptr,
     slice::{self, SliceIndex},
 };
@@ -176,7 +178,9 @@ impl<T> NonEmptyVec<T> {
     #[must_use]
     #[inline]
     pub unsafe fn with_capacity(capacity: NonZeroUsize) -> Self {
-        NonEmptyVec { inner: Vec::with_capacity(capacity.get()) }
+        NonEmptyVec {
+            inner: Vec::with_capacity(capacity.get()),
+        }
     }
 
     /// Creates a new non-empty vector without checking if the given vector is
