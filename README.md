@@ -26,6 +26,10 @@ not_empty = "0.1"
 
 [crates]: https://crates.io/crates/not_empty
 
+## Documentation
+
+View the full reference on `docs.rs` [here](https://docs.rs/not_empty).
+
 ## Features
 
 - `alloc` enables the use of allocated types through the alloc crate.
