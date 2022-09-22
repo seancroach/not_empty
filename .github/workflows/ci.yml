@@ -24,7 +24,14 @@ jobs:
           args: --no-default-features ${{ matrix.args }}
   clippy:
     runs-on: ubuntu-latest
-    if: github.event_name != 'pull_request'
+    strategy:
+      matrix:
+        args:
+          - ""
+          - "--features alloc"
+          - "--features alloc,serde"
+          - "--features std"
+          - "--features std,serde"
     steps:
       - uses: actions/checkout@v3
       - uses: actions-rs/toolchain@v1
@@ -33,7 +40,7 @@ jobs:
       - uses: actions-rs/cargo@v1
         with:
           command: clippy
-          args: --features std,serde --tests
+          args: --no-default-features ${{ matrix.args }} -- -D warnings
   docs:
     runs-on: ubuntu-latest
     steps:
