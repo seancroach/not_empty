@@ -8,7 +8,7 @@ description = "Slices and vectors that are statically guaranteed to be not empty
 documentation = "https://docs.rs/not_empty"
 edition = "2021"
 keywords = ["nonempty", "nonzero", "no_std", "slice", "vector"]
-license = "MIT or Apache-2.0"
+license = "MIT OR Apache-2.0"
 readme = "README.md"
 repository = "https://github.com/seancroach/not_empty"
 
