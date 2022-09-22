@@ -45,4 +45,4 @@ jobs:
         with:
           toolchain: nightly
           command: rustdoc
-          args: --features std,serde -- --cfg doc_cfg -D warnings
+          args: --features serde -- --cfg doc_cfg -D warnings
