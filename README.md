@@ -47,7 +47,7 @@ Only the `std` feature is enabled by default.
 There are other packages that solve this solution. When searching for my own,
 I primarily came across two other packages:
 
-* [`nonempty`] which only supported vectors and didn't have a sollution to
+* [`nonempty`] which only supported vectors and didn't have a solution to
   working elegantly with iterators. Also, interoperability between its exported
   `NonEmpty` type and other slices or vectors left much to be desired from an
   architectural support. To be pedantic, I was jaded that the `NonEmpty` type

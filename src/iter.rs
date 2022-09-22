@@ -1,9 +1,9 @@
 use crate::{EmptyError, NonEmptyVec};
 
 /// Extends [`Iterator`] with methods for collecting [`NonEmptyVec`]s as a
-/// stop-gap to retain a failable [`Iterator::collect`] functionality.
+/// stop-gap to retain a fallible [`Iterator::collect`] functionality.
 ///
-/// Unlike [`Iterator::collect`], the use of the turbofish operator is likely
+/// Unlike [`Iterator::collect`], the use of the turbo-fish operator is likely
 /// not required as the method only collects into a [`NonEmptyVec`].
 pub trait IteratorExt: Iterator {
     /// Transforms an iterator into a [`NonEmptyVec<Self::Item>`] without
@@ -71,7 +71,6 @@ pub trait IteratorExt: Iterator {
         doc(cfg(all(any(feature = "alloc", feature = "std"), not(no_global_oom_handling))))
     )]
     #[inline]
-    #[must_use = "if you really need to exhaust the iterator, consider `.for_each(drop)` instead"]
     fn collect_nonempty(self) -> Result<NonEmptyVec<Self::Item>, EmptyError>
     where
         Self: Sized,
